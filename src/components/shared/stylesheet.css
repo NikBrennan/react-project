@@ -1,0 +1,22 @@
+span input{
+    margin-left: 16px;
+    margin-right: 4px;
+}
+
+span label{
+    margin-right: 16px;
+}
+
+h2 span {
+    font-size: 1rem;
+    float:right;
+}
+
+#sort-by {
+    float: right;
+    font-size: 1.125rem;
+}
+
+body {
+    background: darkslategrey;
+}
