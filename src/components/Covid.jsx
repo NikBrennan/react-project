@@ -15,13 +15,13 @@ const Covid = () => {
 
     //Store filter info
     const [searchTerm, setSearchTerm] = useState("");
-    const handleChangeInput = e => {
-        setSearchTerm(e.target.value);
+    const handleChangeInput = props => {
+        setSearchTerm(props.target.value);
     }
 
     const [sortData, setSort] = useState("");
-    const handleChangeRadio = e => {
-        setSort(e.target.value);
+    const handleChangeRadio = props => {
+        setSort(props.target.value);
     }
 
     //Store original data

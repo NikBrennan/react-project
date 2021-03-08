@@ -4,7 +4,7 @@ import Layout from './shared/Layout';
 const About = () => {
     return ( 
         <Layout title="About">
-            <div className="container bg-light rounded p-2">
+            <div className="container bg-light rounded p-2 border border-secondary">
                 <h2 className="display-4 text-center">How to use this website</h2>
                 <p className="para text-center">
                     In the input box you can filter the data based on country or province/state.
