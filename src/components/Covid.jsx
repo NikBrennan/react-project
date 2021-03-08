@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import Layout from './shared/Layout';
 import axios from 'axios';
-import './shared/stylesheet.css'
+import './shared/stylesheet.css';
 
 const Covid = () => {
     const options = {
@@ -15,13 +15,13 @@ const Covid = () => {
 
     //Store filter info
     const [searchTerm, setSearchTerm] = useState("");
-    const handleChangeInput = props => {
-        setSearchTerm(props.target.value);
+    const handleChangeInput = e => {
+        setSearchTerm(e.target.value);
     }
 
     const [sortData, setSort] = useState("");
-    const handleChangeRadio = props => {
-        setSort(props.target.value);
+    const handleChangeRadio = e => {
+        setSort(e.target.value);
     }
 
     //Store original data
@@ -67,7 +67,10 @@ const Covid = () => {
                     </div>
                 </div>
                 {covid
-                    .filter(filterTerm => filterTerm.country.includes(searchTerm))
+                    /*  Filter by the country or by the province.
+                        Country will never be null, but sometimes the province is so we ahve to check that
+                    */
+                    .filter(data => data.country.includes(searchTerm) || (data.province !== null && data.province.includes(searchTerm)))
 
                     .sort((a, b) => {
                         switch (sortData) {
